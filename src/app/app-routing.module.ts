@@ -6,9 +6,17 @@ import { AddBookComponent }  from './addbook.component';
 import { BookDetailComponent }  from './book-detail.component';
 
 const routes: Routes = [
+{
+	   path: '',
+	   component: FormComponent
+	},
+	{
+	   path: 'form',
+	   component: FormComponent
+	},
 	{
 	   path: 'book',
-	   component: BookComponent,
+	   component: BookComponent
 	},
 	{
 	   path: 'add-book',
@@ -18,15 +26,12 @@ const routes: Routes = [
 	   path: 'book-detail',
 	   component: BookDetailComponent
 	},	
-	{
+	/*{
 	   path: '',
 	   redirectTo: '/book',
 	   pathMatch: 'full'
-	},	
-	{
-	   path: 'form',
-	   component: FormComponent
-	},
+	},	*/
+
 ];
 @NgModule({
   imports: [ 

@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #673ab7;
 }
 .parent-menu li {
     float: left;
@@ -14,14 +14,15 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 15px 15px;
+    padding: 20px 20px;
     text-decoration: none;
+    font-weight: 500;
 }
 .parent-menu li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #9874d8;
 }
 .parent-menu .active{
-    background-color: #4CAF50;
+    background-color: #9874d8;
 }
 .sub-menu ul {
    list-style-type: none;
@@ -39,4 +40,12 @@
    cursor: pointer;
    overflow: hidden;
    white-space: nowrap;
+}
+body {
+    margin: 0;
+    font-family: Roboto;
+    background-color: #f9f9f9;
+}
+nav.parent-menu {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
