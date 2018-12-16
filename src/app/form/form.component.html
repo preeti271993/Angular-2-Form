@@ -1,16 +1,62 @@
 <div class="example-container">
+  <!-- <form class="register" #UserRegistrationForm="ngForm">
   <mat-form-field>
-    <input matInput placeholder="Input">
+    <input matInput placeholder="Username" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" >
   </mat-form-field>
 
   <mat-form-field>
-    <textarea matInput placeholder="Textarea"></textarea>
+    <input matInput placeholder="Password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" >
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select placeholder="Select">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
+    <input matInput placeholder="Email" name="Email" #Email="ngModel" [(ngModel)]="user.Email" >
   </mat-form-field>
-  <button mat-flat-button color="primary"> Submit </button>
+
+  <mat-form-field>
+    <input matInput placeholder="Firstname" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Lastname" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" >
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit"> Submit </button>
+</form> -->
+<form class="col s4" #UserRegistrationForm="ngForm">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" type="text" class="validate">
+          <label data-error="Required Field!">Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input name="Password" #Password="ngModel" [(ngModel)]="user.Password" type="password" class="validate">
+          <label [attr.data-error]="Password.error!=null?(Password.errors.required?'Required Field!':'Min 3 character needed'):''">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="Email" #Email="ngModel" [(ngModel)]="user.Email" type="email" class="validate">
+          <label data-error="Valid Email!">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName" type="text" class="validate">
+          <label data-error="Your Firstname">Firstname</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" type="text" class="validate">
+          <label data-error="Your Firstname">Lastname</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button [disabled]="!UserRegistrationForm.valid" class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+             </button>
+        </div>
+      </div>
+    </form>
 </div>
