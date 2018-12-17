@@ -1,42 +1,23 @@
 <div class="example-container">
-  <!-- <form class="register" #UserRegistrationForm="ngForm">
-  <mat-form-field>
-    <input matInput placeholder="Username" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" >
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" >
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Email" name="Email" #Email="ngModel" [(ngModel)]="user.Email" >
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Firstname" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName" >
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Lastname" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName" >
-  </mat-form-field>
-
-  <button mat-flat-button color="primary" type="submit"> Submit </button>
-</form> -->
-<form class="col s4" #UserRegistrationForm="ngForm">
+  
+<form class="col s4" #UserRegistrationForm="ngForm" (ngSubmit)="submitForm(UserRegistrationForm.value)">
       <div class="row">
         <div class="input-field col s12">
-          <input name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" type="text" class="validate">
+          <input name="UserName" #UserName="ngModel" required="" [(ngModel)]="user.UserName" type="text" class="validate">
           <label data-error="Required Field!">Username</label>
+          <p [hidden]="UserName.valid">Enter Username!</p>
         </div>
         <div class="input-field col s12">
-          <input name="Password" #Password="ngModel" [(ngModel)]="user.Password" type="password" class="validate">
-          <label [attr.data-error]="Password.error!=null?(Password.errors.required?'Required Field!':'Min 3 character needed'):''">Password</label>
+          <input name="Password" #Password="ngModel" required="" minlength="6" [(ngModel)]="user.Password" type="password" class="validate">
+          <label [attr.data-error]="Password.error!=null?(Password.errors.required?'Required Field!':'Min 6 character needed'):''">Password</label>
+          <p [hidden]="Password.valid">Enter Valid Password!</p>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="Email" #Email="ngModel" [(ngModel)]="user.Email" type="email" class="validate">
+          <input name="Email" #Email="ngModel" required="" [(ngModel)]="user.Email" type="email" class="validate">
           <label data-error="Valid Email!">Email</label>
+          <p [hidden]="Email.valid">Enter Valid Email!</p>
         </div>
       </div>
       <div class="row">

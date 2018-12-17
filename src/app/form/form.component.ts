@@ -13,17 +13,29 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    this.user = {
+             UserName:"Username",
+            Password:"Password",
+            Email:"Email",
+            FirstName:"Firstname",
+            LastName:"Lastname"
+        }
   }
   
   resetForm (form? : NgForm){
   	if(form != null)
   		form.reset();
   	    this.user = {
-            UserName='',
-            Password='',
-            Email='',
-            FirstName='',
-            LastName=''
+            UserName:"Username",
+            Password:"Password",
+            Email:"Email",
+            FirstName:"Firstname",
+            LastName:"Lastname"
   	    }
+  }
+  
+  submitForm(value){
+     console.log(JSON.stringify(value));
   }
 }
