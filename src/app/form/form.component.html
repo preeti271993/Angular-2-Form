@@ -11,7 +11,7 @@
           <input name="Password" #Password="ngModel" required="" minlength="6" [(ngModel)]="user.Password" type="password" class="validate">
           <label [attr.data-error]="Password.error!=null?(Password.errors.required?'Required Field!':'Min 6 character needed'):''">Password</label>
           <p [hidden]="Password.valid">Enter Valid Password!</p>
-        </div>
+        </div> 
       </div>
       <div class="row">
         <div class="input-field col s12">

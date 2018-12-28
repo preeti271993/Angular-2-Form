@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/user.model';
 import { NgForm } from '@angular/forms';
+import { RouterModule, Routes , Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,32 +11,38 @@ import { NgForm } from '@angular/forms';
 
 export class FormComponent implements OnInit {
   user: User;
-  constructor() { }
+  constructor(public _router: Router) { }
 
   ngOnInit() {
 
     this.user = {
-             UserName:"Username",
-            Password:"Password",
-            Email:"Email",
-            FirstName:"Firstname",
-            LastName:"Lastname"
+             UserName:"",
+            Password:"",
+            Email:"",
+            FirstName:"",
+            LastName:""
         }
   }
   
-  resetForm (form? : NgForm){
-  	if(form != null)
-  		form.reset();
+  resetForm (UserRegistrationForm? : NgForm){
+
+  	if(UserRegistrationForm != null)
+  		UserRegistrationForm.reset();
   	    this.user = {
-            UserName:"Username",
-            Password:"Password",
-            Email:"Email",
-            FirstName:"Firstname",
-            LastName:"Lastname"
+            UserName:"",
+            Password:"",
+            Email:"",
+            FirstName:"",
+            LastName:""
   	    }
   }
   
+ 
+
   submitForm(value){
      console.log(JSON.stringify(value));
-  }
+    this.resetForm();
+    this._router.navigate(['/dashboard']);
+
+    }
 }

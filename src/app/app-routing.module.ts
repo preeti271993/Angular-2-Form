@@ -4,6 +4,7 @@ import { FormComponent }  from './form/form.component';
 import { BookComponent }  from './book.component';
 import { AddBookComponent }  from './addbook.component';
 import { BookDetailComponent }  from './book-detail.component';
+import { DashboardComponent }  from './dashboard/dashboard.component';
 
 const routes: Routes = [
 {
@@ -25,6 +26,10 @@ const routes: Routes = [
 	{
 	   path: 'book-detail',
 	   component: BookDetailComponent
+	},
+	{
+	   path: 'dashboard',
+	   component: DashboardComponent
 	},	
 	/*{
 	   path: '',
