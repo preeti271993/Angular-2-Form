@@ -5,11 +5,17 @@ import { BookComponent }  from './book.component';
 import { AddBookComponent }  from './addbook.component';
 import { BookDetailComponent }  from './book-detail.component';
 import { DashboardComponent }  from './dashboard/dashboard.component';
+import { BlogComponent }  from './blog/blog.component';
+
 
 const routes: Routes = [
 {
 	   path: '',
-	   component: FormComponent
+	   component: BlogComponent
+	},
+	{
+	   path: 'blog',
+	   component: BlogComponent
 	},
 	{
 	   path: 'form',

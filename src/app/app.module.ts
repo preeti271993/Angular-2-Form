@@ -19,6 +19,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { Data1Service } from './Data1.service';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   imports: [     
@@ -34,7 +35,8 @@ import { Data1Service } from './Data1.service';
     		AddBookComponent,
     		BookDetailComponent,
     		FormComponent,
-    		DashboardComponent
+    		DashboardComponent,
+    		BlogComponent
   ],
   providers: [ BookService ],
   bootstrap: [ AppComponent ]

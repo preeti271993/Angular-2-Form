@@ -1,28 +1,37 @@
-<p>
-  dashboard works!
-</p>
 
-
-  <br />
-
- <div *ngFor="let d of data | async">
-    <table border=1>
+<div class="container">
+ <div class="col s12">
+    <table class="striped">
         <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                username
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+        <tr *ngFor="let d of data | async">
             <td>
-                <h3>Id: {{ d.id }}</h3>
+               {{ d.id }}
             </td>
             <td> 
-                <h3>name: {{ d.name }}</h3>
+               {{ d.name }}
             </td>
             <td>
-                <h3>username: {{ d.username }}</h3>
+               {{ d.username }}
             </td>
             <td>
-                <h3>email: {{ d.email }}</h3>
+               {{ d.email }}
             </td>
-            <td>
         </tr>
     </table> 
+</div>
 </div>
 
 
