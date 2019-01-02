@@ -6,12 +6,17 @@ import { AddBookComponent }  from './addbook.component';
 import { BookDetailComponent }  from './book-detail.component';
 import { DashboardComponent }  from './dashboard/dashboard.component';
 import { BlogComponent }  from './blog/blog.component';
+import { HighchartComponent }  from './highchart/highchart.component';
 
 
 const routes: Routes = [
 {
 	   path: '',
 	   component: BlogComponent
+	},
+	{
+	   path: 'highchart',
+	   component: HighchartComponent
 	},
 	{
 	   path: 'blog',
@@ -21,6 +26,7 @@ const routes: Routes = [
 	   path: 'form',
 	   component: FormComponent
 	},
+	
 	{
 	   path: 'book',
 	   component: BookComponent

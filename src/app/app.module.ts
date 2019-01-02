@@ -20,6 +20,9 @@ import 'rxjs/add/operator/map';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { Data1Service } from './Data1.service';
 import { BlogComponent } from './blog/blog.component';
+import { HighchartComponent } from './highchart/highchart.component';
+import { ChartModule } from 'angular2-highcharts';
+import * as highcharts from 'Highcharts';
 
 @NgModule({
   imports: [     
@@ -27,7 +30,8 @@ import { BlogComponent } from './blog/blog.component';
 		FormsModule,
 		AppRoutingModule,
     HttpClientModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+    ChartModule.forRoot(highcharts)
   ],
   declarations: [
         AppComponent,
@@ -36,7 +40,8 @@ import { BlogComponent } from './blog/blog.component';
     		BookDetailComponent,
     		FormComponent,
     		DashboardComponent,
-    		BlogComponent
+    		BlogComponent,
+    		HighchartComponent
   ],
   providers: [ BookService ],
   bootstrap: [ AppComponent ]
