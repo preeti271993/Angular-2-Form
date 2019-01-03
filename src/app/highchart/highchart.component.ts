@@ -8,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HighchartComponent{
   
    chartOptions : any;
-
   constructor() {
-
-     this.chartOptions = {
+  
+    this.chartOptions = {
    chart: {
     type: 'bar'
    },
@@ -37,8 +36,8 @@ export class HighchartComponent{
    data: [5, 7, 3]
   }]
   }
- }
 
+}
    }
 
 

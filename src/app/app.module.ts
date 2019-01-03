@@ -23,6 +23,10 @@ import { BlogComponent } from './blog/blog.component';
 import { HighchartComponent } from './highchart/highchart.component';
 import { ChartModule } from 'angular2-highcharts';
 import * as highcharts from 'Highcharts';
+import More from 'highcharts/highcharts-more';
+import Tree from 'highcharts/modules/treemap';
+import Heatmap from 'highcharts/modules/heatmap';
+
 
 @NgModule({
   imports: [     
